@@ -1,3 +1,5 @@
 .env
 logs/dag_processor_manager
 logs/scheduler
+tasks.txt
+dags/__pycache__
