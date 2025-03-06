@@ -1,0 +1,35 @@
+[2025-03-06T04:57:04.271+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.create_dim_location scheduled__2025-03-06T04:54:00+00:00 [queued]>
+[2025-03-06T04:57:04.310+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.create_dim_location scheduled__2025-03-06T04:54:00+00:00 [queued]>
+[2025-03-06T04:57:04.311+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T04:57:04.311+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2025-03-06T04:57:04.312+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T04:57:04.365+0000] {taskinstance.py:1383} INFO - Executing <Task(PostgresOperator): create_dim_location> on 2025-03-06 04:54:00+00:00
+[2025-03-06T04:57:04.394+0000] {standard_task_runner.py:55} INFO - Started process 3329 to run task
+[2025-03-06T04:57:04.454+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'covid19_etl', 'create_dim_location', 'scheduled__2025-03-06T04:54:00+00:00', '--job-id', '748', '--raw', '--subdir', 'DAGS_FOLDER/covid19-etl.py', '--cfg-path', '/tmp/tmpmnrmqm1p']
+[2025-03-06T04:57:04.500+0000] {standard_task_runner.py:83} INFO - Job 748: Subtask create_dim_location
+[2025-03-06T04:57:04.941+0000] {task_command.py:376} INFO - Running <TaskInstance: covid19_etl.create_dim_location scheduled__2025-03-06T04:54:00+00:00 [running]> on host e5021ab2b3c4
+[2025-03-06T04:57:05.172+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Sharaf
+AIRFLOW_CTX_DAG_ID=covid19_etl
+AIRFLOW_CTX_TASK_ID=create_dim_location
+AIRFLOW_CTX_EXECUTION_DATE=2025-03-06T04:54:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-03-06T04:54:00+00:00
+[2025-03-06T04:57:05.214+0000] {base.py:71} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2025-03-06T04:57:05.245+0000] {sql.py:315} INFO - Running statement: 
+         create table if not exists dim_location
+        (
+            region       varchar,
+            lat          double precision,
+            long         double precision,
+            state        varchar,
+            location_id  varchar primary key
+        );
+        , parameters: None
+[2025-03-06T04:57:05.259+0000] {postgres.py:96} INFO - NOTICE:  relation "dim_location" already exists, skipping
+
+[2025-03-06T04:57:05.307+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=covid19_etl, task_id=create_dim_location, execution_date=20250306T045400, start_date=20250306T045704, end_date=20250306T045705
+[2025-03-06T04:57:05.378+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2025-03-06T04:57:05.439+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

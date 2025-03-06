@@ -1,0 +1,94 @@
+[2025-03-06T05:00:19.470+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.Load scheduled__2025-03-06T04:57:00+00:00 [queued]>
+[2025-03-06T05:00:19.489+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.Load scheduled__2025-03-06T04:57:00+00:00 [queued]>
+[2025-03-06T05:00:19.490+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T05:00:19.491+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2025-03-06T05:00:19.492+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T05:00:19.524+0000] {taskinstance.py:1383} INFO - Executing <Task(PythonOperator): Load> on 2025-03-06 04:57:00+00:00
+[2025-03-06T05:00:19.537+0000] {standard_task_runner.py:55} INFO - Started process 3495 to run task
+[2025-03-06T05:00:19.545+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'covid19_etl', 'Load', 'scheduled__2025-03-06T04:57:00+00:00', '--job-id', '759', '--raw', '--subdir', 'DAGS_FOLDER/covid19-etl.py', '--cfg-path', '/tmp/tmppsuwgb82']
+[2025-03-06T05:00:19.549+0000] {standard_task_runner.py:83} INFO - Job 759: Subtask Load
+[2025-03-06T05:00:19.704+0000] {task_command.py:376} INFO - Running <TaskInstance: covid19_etl.Load scheduled__2025-03-06T04:57:00+00:00 [running]> on host e5021ab2b3c4
+[2025-03-06T05:00:19.865+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Sharaf
+AIRFLOW_CTX_DAG_ID=covid19_etl
+AIRFLOW_CTX_TASK_ID=Load
+AIRFLOW_CTX_EXECUTION_DATE=2025-03-06T04:57:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-03-06T04:57:00+00:00
+[2025-03-06T05:00:19.869+0000] {covid19-etl.py:96} INFO - Loading data to destination
+[2025-03-06T05:00:25.860+0000] {base.py:71} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2025-03-06T05:00:25.898+0000] {warnings.py:110} WARNING - /opt/***/dags/covid19-etl.py:90: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  axis=1
+
+[2025-03-06T05:00:26.052+0000] {covid19-etl.py:147} INFO - Processed batch 1/61 (200/12044 rows)
+[2025-03-06T05:00:26.161+0000] {covid19-etl.py:147} INFO - Processed batch 2/61 (400/12044 rows)
+[2025-03-06T05:00:26.267+0000] {covid19-etl.py:147} INFO - Processed batch 3/61 (600/12044 rows)
+[2025-03-06T05:00:26.421+0000] {covid19-etl.py:147} INFO - Processed batch 4/61 (800/12044 rows)
+[2025-03-06T05:00:26.552+0000] {covid19-etl.py:147} INFO - Processed batch 5/61 (1000/12044 rows)
+[2025-03-06T05:00:26.645+0000] {covid19-etl.py:147} INFO - Processed batch 6/61 (1200/12044 rows)
+[2025-03-06T05:00:26.784+0000] {covid19-etl.py:147} INFO - Processed batch 7/61 (1400/12044 rows)
+[2025-03-06T05:00:26.884+0000] {covid19-etl.py:147} INFO - Processed batch 8/61 (1600/12044 rows)
+[2025-03-06T05:00:27.013+0000] {covid19-etl.py:147} INFO - Processed batch 9/61 (1800/12044 rows)
+[2025-03-06T05:00:27.188+0000] {covid19-etl.py:147} INFO - Processed batch 10/61 (2000/12044 rows)
+[2025-03-06T05:00:27.337+0000] {covid19-etl.py:147} INFO - Processed batch 11/61 (2200/12044 rows)
+[2025-03-06T05:00:27.467+0000] {covid19-etl.py:147} INFO - Processed batch 12/61 (2400/12044 rows)
+[2025-03-06T05:00:27.602+0000] {covid19-etl.py:147} INFO - Processed batch 13/61 (2600/12044 rows)
+[2025-03-06T05:00:27.739+0000] {covid19-etl.py:147} INFO - Processed batch 14/61 (2800/12044 rows)
+[2025-03-06T05:00:27.848+0000] {covid19-etl.py:147} INFO - Processed batch 15/61 (3000/12044 rows)
+[2025-03-06T05:00:27.949+0000] {covid19-etl.py:147} INFO - Processed batch 16/61 (3200/12044 rows)
+[2025-03-06T05:00:28.078+0000] {covid19-etl.py:147} INFO - Processed batch 17/61 (3400/12044 rows)
+[2025-03-06T05:00:28.182+0000] {covid19-etl.py:147} INFO - Processed batch 18/61 (3600/12044 rows)
+[2025-03-06T05:00:28.273+0000] {covid19-etl.py:147} INFO - Processed batch 19/61 (3800/12044 rows)
+[2025-03-06T05:00:28.378+0000] {covid19-etl.py:147} INFO - Processed batch 20/61 (4000/12044 rows)
+[2025-03-06T05:00:28.493+0000] {covid19-etl.py:147} INFO - Processed batch 21/61 (4200/12044 rows)
+[2025-03-06T05:00:28.597+0000] {covid19-etl.py:147} INFO - Processed batch 22/61 (4400/12044 rows)
+[2025-03-06T05:00:28.693+0000] {covid19-etl.py:147} INFO - Processed batch 23/61 (4600/12044 rows)
+[2025-03-06T05:00:28.782+0000] {covid19-etl.py:147} INFO - Processed batch 24/61 (4800/12044 rows)
+[2025-03-06T05:00:28.890+0000] {covid19-etl.py:147} INFO - Processed batch 25/61 (5000/12044 rows)
+[2025-03-06T05:00:29.008+0000] {covid19-etl.py:147} INFO - Processed batch 26/61 (5200/12044 rows)
+[2025-03-06T05:00:29.182+0000] {covid19-etl.py:147} INFO - Processed batch 27/61 (5400/12044 rows)
+[2025-03-06T05:00:29.314+0000] {covid19-etl.py:147} INFO - Processed batch 28/61 (5600/12044 rows)
+[2025-03-06T05:00:29.441+0000] {covid19-etl.py:147} INFO - Processed batch 29/61 (5800/12044 rows)
+[2025-03-06T05:00:29.568+0000] {covid19-etl.py:147} INFO - Processed batch 30/61 (6000/12044 rows)
+[2025-03-06T05:00:29.719+0000] {covid19-etl.py:147} INFO - Processed batch 31/61 (6200/12044 rows)
+[2025-03-06T05:00:29.839+0000] {covid19-etl.py:147} INFO - Processed batch 32/61 (6400/12044 rows)
+[2025-03-06T05:00:29.982+0000] {covid19-etl.py:147} INFO - Processed batch 33/61 (6600/12044 rows)
+[2025-03-06T05:00:30.091+0000] {covid19-etl.py:147} INFO - Processed batch 34/61 (6800/12044 rows)
+[2025-03-06T05:00:30.199+0000] {covid19-etl.py:147} INFO - Processed batch 35/61 (7000/12044 rows)
+[2025-03-06T05:00:30.305+0000] {covid19-etl.py:147} INFO - Processed batch 36/61 (7200/12044 rows)
+[2025-03-06T05:00:30.419+0000] {covid19-etl.py:147} INFO - Processed batch 37/61 (7400/12044 rows)
+[2025-03-06T05:00:30.524+0000] {covid19-etl.py:147} INFO - Processed batch 38/61 (7600/12044 rows)
+[2025-03-06T05:00:30.621+0000] {covid19-etl.py:147} INFO - Processed batch 39/61 (7800/12044 rows)
+[2025-03-06T05:00:30.729+0000] {covid19-etl.py:147} INFO - Processed batch 40/61 (8000/12044 rows)
+[2025-03-06T05:00:30.849+0000] {covid19-etl.py:147} INFO - Processed batch 41/61 (8200/12044 rows)
+[2025-03-06T05:00:30.967+0000] {covid19-etl.py:147} INFO - Processed batch 42/61 (8400/12044 rows)
+[2025-03-06T05:00:31.065+0000] {covid19-etl.py:147} INFO - Processed batch 43/61 (8600/12044 rows)
+[2025-03-06T05:00:31.162+0000] {covid19-etl.py:147} INFO - Processed batch 44/61 (8800/12044 rows)
+[2025-03-06T05:00:31.297+0000] {covid19-etl.py:147} INFO - Processed batch 45/61 (9000/12044 rows)
+[2025-03-06T05:00:31.407+0000] {covid19-etl.py:147} INFO - Processed batch 46/61 (9200/12044 rows)
+[2025-03-06T05:00:31.520+0000] {covid19-etl.py:147} INFO - Processed batch 47/61 (9400/12044 rows)
+[2025-03-06T05:00:31.642+0000] {covid19-etl.py:147} INFO - Processed batch 48/61 (9600/12044 rows)
+[2025-03-06T05:00:31.795+0000] {covid19-etl.py:147} INFO - Processed batch 49/61 (9800/12044 rows)
+[2025-03-06T05:00:31.923+0000] {covid19-etl.py:147} INFO - Processed batch 50/61 (10000/12044 rows)
+[2025-03-06T05:00:32.055+0000] {covid19-etl.py:147} INFO - Processed batch 51/61 (10200/12044 rows)
+[2025-03-06T05:00:32.207+0000] {covid19-etl.py:147} INFO - Processed batch 52/61 (10400/12044 rows)
+[2025-03-06T05:00:32.322+0000] {covid19-etl.py:147} INFO - Processed batch 53/61 (10600/12044 rows)
+[2025-03-06T05:00:32.449+0000] {covid19-etl.py:147} INFO - Processed batch 54/61 (10800/12044 rows)
+[2025-03-06T05:00:32.600+0000] {covid19-etl.py:147} INFO - Processed batch 55/61 (11000/12044 rows)
+[2025-03-06T05:00:32.760+0000] {covid19-etl.py:147} INFO - Processed batch 56/61 (11200/12044 rows)
+[2025-03-06T05:00:32.887+0000] {covid19-etl.py:147} INFO - Processed batch 57/61 (11400/12044 rows)
+[2025-03-06T05:00:33.008+0000] {covid19-etl.py:147} INFO - Processed batch 58/61 (11600/12044 rows)
+[2025-03-06T05:00:33.130+0000] {covid19-etl.py:147} INFO - Processed batch 59/61 (11800/12044 rows)
+[2025-03-06T05:00:33.242+0000] {covid19-etl.py:147} INFO - Processed batch 60/61 (12000/12044 rows)
+[2025-03-06T05:00:33.277+0000] {covid19-etl.py:147} INFO - Processed batch 61/61 (12044/12044 rows)
+[2025-03-06T05:00:33.285+0000] {covid19-etl.py:150} INFO - Successfully loaded all 12044 rows to destination
+[2025-03-06T05:00:33.289+0000] {python.py:177} INFO - Done. Returned value was: None
+[2025-03-06T05:00:33.306+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=covid19_etl, task_id=Load, execution_date=20250306T045700, start_date=20250306T050019, end_date=20250306T050033
+[2025-03-06T05:00:33.362+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2025-03-06T05:00:33.403+0000] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

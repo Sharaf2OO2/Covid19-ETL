@@ -1,0 +1,36 @@
+[2025-03-06T04:54:24.894+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.create_fact_covid_cases scheduled__2025-03-06T04:51:00+00:00 [queued]>
+[2025-03-06T04:54:24.915+0000] {taskinstance.py:1165} INFO - Dependencies all met for <TaskInstance: covid19_etl.create_fact_covid_cases scheduled__2025-03-06T04:51:00+00:00 [queued]>
+[2025-03-06T04:54:24.917+0000] {taskinstance.py:1362} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T04:54:24.927+0000] {taskinstance.py:1363} INFO - Starting attempt 1 of 2
+[2025-03-06T04:54:24.928+0000] {taskinstance.py:1364} INFO - 
+--------------------------------------------------------------------------------
+[2025-03-06T04:54:24.987+0000] {taskinstance.py:1383} INFO - Executing <Task(PostgresOperator): create_fact_covid_cases> on 2025-03-06 04:51:00+00:00
+[2025-03-06T04:54:25.019+0000] {standard_task_runner.py:55} INFO - Started process 3205 to run task
+[2025-03-06T04:54:25.055+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'covid19_etl', 'create_fact_covid_cases', 'scheduled__2025-03-06T04:51:00+00:00', '--job-id', '741', '--raw', '--subdir', 'DAGS_FOLDER/covid19-etl.py', '--cfg-path', '/tmp/tmpzz5guc7u']
+[2025-03-06T04:54:25.063+0000] {standard_task_runner.py:83} INFO - Job 741: Subtask create_fact_covid_cases
+[2025-03-06T04:54:25.342+0000] {task_command.py:376} INFO - Running <TaskInstance: covid19_etl.create_fact_covid_cases scheduled__2025-03-06T04:51:00+00:00 [running]> on host e5021ab2b3c4
+[2025-03-06T04:54:25.572+0000] {taskinstance.py:1592} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Sharaf
+AIRFLOW_CTX_DAG_ID=covid19_etl
+AIRFLOW_CTX_TASK_ID=create_fact_covid_cases
+AIRFLOW_CTX_EXECUTION_DATE=2025-03-06T04:51:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-03-06T04:51:00+00:00
+[2025-03-06T04:54:25.604+0000] {base.py:71} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2025-03-06T04:54:25.626+0000] {sql.py:315} INFO - Running statement: 
+        create table if not exists fact_covid_cases
+        (
+            date_id     integer constraint date_fk references dim_date,
+            location_id varchar constraint location_fk references dim_location,
+            cases       int,
+            deaths      int,
+            recoveries  int,
+            case_id     serial primary key
+        );
+        , parameters: None
+[2025-03-06T04:54:25.635+0000] {postgres.py:96} INFO - NOTICE:  relation "fact_covid_cases" already exists, skipping
+
+[2025-03-06T04:54:25.651+0000] {taskinstance.py:1406} INFO - Marking task as SUCCESS. dag_id=covid19_etl, task_id=create_fact_covid_cases, execution_date=20250306T045100, start_date=20250306T045424, end_date=20250306T045425
+[2025-03-06T04:54:25.725+0000] {local_task_job.py:164} INFO - Task exited with return code 0
+[2025-03-06T04:54:25.781+0000] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
